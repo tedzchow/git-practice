@@ -72,4 +72,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 20. The admin will review the PR and say **Congrats** if everything looks good.
 
 ## Contributors
-- [John Doe](./john-doe/me.md)
+- [John Doe](./john-doe/README.md)
