@@ -17,3 +17,5 @@ male
 ```
 Sensitive to new and never give up when face to obstacles.
 ```
+## Contributors
+- [Collin White](./Collinwhite/README.md)
