@@ -1,5 +1,4 @@
 import { Provider } from 'react-redux'
-import bootstrap from 'bootstrap'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import store from './redux/store'
 import jwt_decode from 'jwt-decode'
@@ -11,6 +10,7 @@ import Expense from './maincomponent/Expense'
 import Navbar from './maincomponent/Navbar'
 import Summary from './maincomponent/Summary'
 import setauthtokentoheader from './redux/action/setauthtokentoheader'
+
 if (localStorage.token) {
   setauthtokentoheader(localStorage.token)
   const decoded = jwt_decode(localStorage.token)

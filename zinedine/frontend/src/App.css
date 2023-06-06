@@ -8,10 +8,13 @@ input{
 }
 .login{
   width: 500px;
-  margin: auto;
-  margin-top: 250px;
+  margin-top: 150px;
 }
 td{
   padding: 15px;
   font-size: 26px;
+}
+.add{
+  width: 80px;
+  height: 40px;
 }
