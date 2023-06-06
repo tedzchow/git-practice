@@ -1,0 +1,17 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+input{
+  width: 200px;
+}
+.login{
+  width: 500px;
+  margin: auto;
+  margin-top: 250px;
+}
+td{
+  padding: 15px;
+  font-size: 26px;
+}
