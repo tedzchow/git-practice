@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { store } from "./components/store";
 import { Provider } from "react-redux";
+import store from "./redux/_store/store";
 
 import TodoList from "./components/TodoList";
 
