@@ -1,88 +1,64 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import './App.css';
 
 type Todo = {
-    id: number;
-    task: string;
-    isCompleted: boolean;
-};
+  id: Number;
+  task: String;
+  done: Boolean
+}
+const App = () => {
 
-function App() {
-    const [todos, setTodos] = useState<Todo[]>([]);
-    const [task, setTask] = useState<string>("");
+  const [todos, setTodos] = useState<Array<Todo>>([]);
+  const [task, setTask] = useState("");
 
-    const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTask(event.target.value);
-    };
+  const add = () => {
+    if (!task) alert("Input Task");
+    else {
 
-    const handleFormSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
+      setTodos([...todos, { id: Date.now(), task: task, done: false }]);
+      setTask("");
+      console.log(todos)
+    }
+  }
 
-        // check if the value is empty
-        if (task.trim().length === 0) {
-            alert("Please enter a value!");
-            return;
-        }
-
-        // create a new todo
-        const todo: Todo = {
-            id: Date.now(),
-            task: task,
-            isCompleted: false,
-        };
-
-        // add todo to the state
-        setTodos([todo, ...todos]);
-
-        // clear the value of task
-        setTask("");
-    };
-
-    const handleChangeChecked = (todo: Todo) => {
-        // index of the todo
-        const index = todos.indexOf(todo);
-
-        // change todo completed status
-        todo.isCompleted = !todo.isCompleted;
-
-        // then we need to replace it with one in todos
-        todos.splice(index, 1, todo);
-
-        // update the state
-        setTodos([...todos]);
-    };
-
-    const handleDelete = (id: number) => {
-        // find index of todo from id
-        const index = todos.findIndex((todo) => todo.id === id);
-
-        // remove todo
-        todos.splice(index, 1);
-
-        // update the state
-        setTodos([...todos]);
-    };
-
-    return (
-        <div>
-            <form onSubmit={handleFormSubmit}>
-                <input className = "border-2 focus:bg-slate-300 p-2 focus:outline-cyan-500" type="text" name="task" value={task} onChange={handleInput} />
-                <button className = "text-2xl bg-green-400 border-2 p-1 m-2" type="submit">Submit</button>
-            </form>
-            <ul>
-                {todos.map((todo) => (
-                    <li key={todo.id}>
-                        {todo.task}
-                        <input
-                            type="checkbox"
-                            checked={todo.isCompleted}
-                            onChange={() => handleChangeChecked(todo)}
-                        />
-                        <button onClick={() => handleDelete(todo.id)}>Remove</button>
-                    </li>
-                ))}
-            </ul>
+  const mark = (id: Number) => {
+    setTodos(
+      todos.map((todo) => (
+        todo.id === id ? { ...todo, done: !todo.done } : todo))
+    )
+  }
+  const deleteTodo = (id:Number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+  return (
+    <div className="App">
+      <div className="container">
+        <div className='todo'>
+          <h1 className="title">To Do List</h1>
+          <button className="newBtn" > +&nbsp; Add New</button>
         </div>
-    );
+        <div className='inputContainer'>
+          <input className="inputField" name="task" placeholder="Write Task Name" value={task} onChange={(e) => setTask(e.target.value)} />
+          
+          <button className="cancelBtn">Cancel</button>
+          <button className="addBtn" onClick={add}>Add</button>
+        </div>
+        <ul className='listBox'>
+          {todos.map((todo, index) => {
+            return (
+              <li key={index} className="inputContainer">
+                <input className="check" type="checkbox" onClick={() => mark(todo.id)} />
+                <span className="list">{todo.task}</span>
+                <span className="delete" onClick={() => deleteTodo(todo.id)}>
+                  &times;
+                </span>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </div>
+  );
 }
 
 export default App;
