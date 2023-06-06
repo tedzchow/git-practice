@@ -1,49 +1,65 @@
-'use client'
+"use client";
 import React, { useState } from "react";
-export type TodoType={
-  id:Number;
-  text:String;
-  done:Boolean
-}
+export type TodoType = {
+  id: Number;
+  text: String;
+  done: Boolean;
+};
 const TodoApp = () => {
   const [todos, setTodos] = useState<Array<TodoType>>([]);
   const [input, setInput] = useState("");
-
-  const addTodo = (e:React.FormEvent<HTMLFormElement>) => {
+  const [add, setAdd] = useState(true);
+  const addTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input) return;
     setTodos([...todos, { id: Date.now(), text: input, done: false }]);
     setInput("");
+    setAdd(true);
   };
 
-  const deleteTodo = (id:Number) => {
+  const deleteTodo = (id: Number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const markTodo = (id:Number) => {
+  const markTodo = (id: Number) => {
     setTodos(
-      todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo))
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
     );
   };
-
+  const onAdd = () => {
+    setAdd(false);
+  };
   return (
     <div className="container">
-      <h1>Todo App</h1>
-      <form onSubmit={(e)=>addTodo(e)}>
+      <div className="flex between">
+        <h1>Todo List</h1>
+        <button className="btn" onClick={onAdd}>
+          +Add New
+        </button>
+      </div>
+      <form onSubmit={(e) => addTodo(e)} className={`${add ? "add" : ""}`}>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Add a new todo"
         />
-        <button type="submit">Add Todo</button>
+        <button className="btn" onClick={()=>setAdd(true)}>
+          Cancel
+        </button>
+        <button type="submit" className="btn">
+          Add Todo
+        </button>
       </form>
       <ul>
         {todos.map((todo) => (
           <li className={`todo-item ${todo.done ? "done" : ""}`}>
-            <span onClick={() => markTodo(todo.id)}>{todo.text}</span>
+            <input type="checkbox" onChange={() => markTodo(todo.id)} />
+            <span>{todo.text}</span>
             <button className="delete" onClick={() => deleteTodo(todo.id)}>
-              Delete
+              X
             </button>
           </li>
         ))}

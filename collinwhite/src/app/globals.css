@@ -29,12 +29,14 @@ a {
   padding: 0.5rem;
   background-color: #f0f0f0;
   margin-bottom: 0.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .todo-item.done {
   text-decoration: line-through;
   opacity: 0.6;
+  border-color: red;
+  border-width: 2px;
 }
 
 button {
@@ -46,4 +48,34 @@ button {
 button.delete {
   color: red;
   margin-left: 1rem;
+}
+
+.btn{
+  background-color:white;
+  padding: 6px;
+  color:violet;
+  margin:5px;
+  border-color: violet;
+  border-radius: 5px;
+  border-width: 2px;
+}
+.btn:hover{
+  background-color: violet;
+  color: white;
+}
+input{
+  padding: 10px;
+}
+input[type=checkbox]:focus{
+  border-color: red;
+}
+.add{
+  display: none;
+}
+.flex{
+  display: flex;
+}
+.between{
+  justify-content: space-between;
+  align-items: center;
 }
