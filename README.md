@@ -6,9 +6,9 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 
 ## Instructions
 ### Setup
-1. Clone the repository to your local machine:
+1. Fork and clone the repository to your local machine:
    ```
-   git clone https://github.com/oddcommits/git-practice.git
+   git clone https://github.com/[your-github-handle]/git-practice.git
    cd git-practice
    ```
 2. Check out a new branch from the main branch with your name:
