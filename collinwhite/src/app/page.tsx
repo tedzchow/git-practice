@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 export type TodoType = {
   id: Number;
   text: String;
@@ -9,24 +9,32 @@ const TodoApp = () => {
   const [todos, setTodos] = useState<Array<TodoType>>([]);
   const [input, setInput] = useState("");
   const [add, setAdd] = useState(true);
-  const addTodo = (e: React.FormEvent<HTMLFormElement>) => {
+  useEffect(()=>{
+    if(localStorage.todos){
+      setTodos(JSON.parse (`${localStorage.getItem("todos")}`));
+    }
+  },[])
+  const addTodo = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input) return;
-    setTodos([...todos, { id: Date.now(), text: input, done: false }]);
-    setInput("");
-    setAdd(true);
+   await setTodos([...todos, { id: Date.now(), text: input, done: false }]);
+   await setInput("");
+   await setAdd(true);
+   await localStorage.setItem('todos',JSON.stringify(todos));
   };
 
   const deleteTodo = (id: Number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+    localStorage.setItem('todos',JSON.stringify(todos));
   };
 
-  const markTodo = (id: Number) => {
-    setTodos(
+  const markTodo = async (id: Number) => {
+   await setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo
       )
     );
+    localStorage.setItem('todos',JSON.stringify(todos));
   };
   const onAdd = () => {
     setAdd(false);
