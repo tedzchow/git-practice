@@ -1,0 +1,17 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    width: 100%;
+    min-height: 100vh;
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
