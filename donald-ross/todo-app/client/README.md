@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project is created with ReactJS and Tailwind.
+This project is todo app created with ReactJS and Tailwind.
 
 This project has three parts:
 
