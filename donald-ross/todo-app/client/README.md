@@ -2,7 +2,7 @@
 
 This project is created with ReactJS and Tailwind.
 
-This project has three parts
+This project has three parts:
 
     1. header and add list button 
     
@@ -21,6 +21,8 @@ In the project directory, you can run:
         cd client
 
         npm start
+        
+port:3000
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
