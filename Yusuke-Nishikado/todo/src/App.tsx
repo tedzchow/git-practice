@@ -65,8 +65,8 @@ function App() {
     return (
         <div>
             <form onSubmit={handleFormSubmit}>
-                <input type="text" name="task" value={task} onChange={handleInput} />
-                <button type="submit">Submit</button>
+                <input className = "border-2 focus:bg-slate-300 p-2 focus:outline-cyan-500" type="text" name="task" value={task} onChange={handleInput} />
+                <button className = "text-2xl bg-green-400 border-2 p-1 m-2" type="submit">Submit</button>
             </form>
             <ul>
                 {todos.map((todo) => (
