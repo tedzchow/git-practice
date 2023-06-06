@@ -20,11 +20,11 @@ body {
   min-height: 100px;
   transform: translate(-50%, -50%);
 }
-.main {
+#newtask {
   position: relative;
   padding: 30px 20px;
 }
-.main input {
+#newtask input {
   width: 75%;
   height: 45px;
   padding: 12px;
@@ -37,11 +37,11 @@ body {
   border: 2px solid #d1d3d4;
 }
 
-.main input:focus {
+#newtask input:focus {
   outline: none;
   border-color: #0d75ec;
 }
-.main button {
+#newtask button {
   position: relative;
   float: right;
   font-weight: 500;
