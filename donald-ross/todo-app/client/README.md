@@ -1,9 +1,13 @@
 # Getting Started with Create React App
 
 This project is created with ReactJS and Tailwind.
+
 This project has three parts
+
     1. header and `add list` button 
+    
     2. `input stage` and `add` button and `cancel` to create list.
+    
     3.  todo list stage
 
 ## Available Scripts
