@@ -1,0 +1,20 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto 0;
+    max-width: 600px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    background-color: #fafafa;
+    box-shadow: inset 2px 2px 5px rgba(105, 140, 145, 0.399),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.997);
+    font-family:'Courier New', Courier, monospace;
+}
+
+.todo h1{
+    color: #ffffff;
+    text-shadow: 0 2px 2px #000000;
+}
