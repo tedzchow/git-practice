@@ -19,6 +19,13 @@ export const Main = () => {
     }
   };
 
+  const handleRemove = (e) => {
+    const newItems = [...items];
+    newItems.splice(Number(e.target.id), 1);
+    addItem(newItems);
+    localStorage.setItem("items", JSON.stringify(items));
+  };
+
   return (
     <>
       <div className="w-full">
@@ -79,7 +86,6 @@ export const Main = () => {
                     stroke="currentColor"
                     className="w-4 h-4 my-1 hover:scale-125 hover:cursor-pointer"
                     id={index}
-                    onClick={handleRemove}
                   >
                     <path
                       strokeLinecap="round"
