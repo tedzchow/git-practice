@@ -9,7 +9,10 @@ export default function TodoList({ todos, setTodos }) {
         setTodos([...todos]);
     }
 
-  
+    const handleDelete = index => {
+        const newTodos = todos.filter((_, i) => i !== index);
+        setTodos(newTodos);
+    }
 
     return (
         <ul className='todoList'>
