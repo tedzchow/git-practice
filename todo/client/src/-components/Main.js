@@ -11,6 +11,13 @@ export const Main = () => {
   );
   const [NewRecordVisible, handleVisible] = useState("hidden");
 
+  const handleAdd = () => {
+    if (newItemValue != "") {
+      addItem([...items, newItemValue]);
+      setNewItemValue("");
+      localStorage.setItem("items", JSON.stringify(items));
+    }
+  };
 
   return (
     <>
@@ -38,6 +45,7 @@ export const Main = () => {
           <div className="flex justify-between">
             <button
               className="bg-black text-white border border-zinc-950 px-2 rounded-md mr-4"
+              onClick={handleAdd}
             >
               Add
             </button>
