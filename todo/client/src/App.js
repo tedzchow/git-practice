@@ -1,3 +1,5 @@
+import { BrowserRouter } from 'react-router-dom'
+
 import { Main } from './_components/Main'
 
 import logo from './logo.svg';
