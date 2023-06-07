@@ -86,6 +86,7 @@ export const Main = () => {
                     stroke="currentColor"
                     className="w-4 h-4 my-1 hover:scale-125 hover:cursor-pointer"
                     id={index}
+                    onClick={handleRemove}
                   >
                     <path
                       strokeLinecap="round"
