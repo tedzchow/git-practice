@@ -59,6 +59,39 @@ export const Main = () => {
             </button>
           </div>
         </div>
+        <div className="w-full justify-between m-auto text-black py-5 text-black px-16 ">
+          {items.map((value, index) => {
+            return (
+              <div
+                className="justify-between border my-3 border-zinc-950 px-2 rounded-md p-2 flex"
+                key={index}
+              >
+                <span>
+                  <input type="checkbox" className="mr-2" />
+                  {value}
+                </span>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-4 h-4 my-1 hover:scale-125 hover:cursor-pointer"
+                    id={index}
+                    onClick={handleRemove}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
