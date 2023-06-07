@@ -7,24 +7,15 @@ import { ADD_TODO } from "../config/constants";
 interface ITodos {
   todoList: [];
 }
+interface todo {
+  title: string;
+}
 
 const Todo = () => {
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
   const todos: ITodos = useAppSelector((state) => state.todo);
   console.error("todos", todos);
-
-  interface todo {
-    title: string;
-  }
-  const add = () => {
-    const todo = inputRef.current?.value;
-    if (todo)
-      dispatch({
-        type: ADD_TODO,
-        payload: todo,
-      });
-  };
 
   const add = useCallback(() => {
     const todo = inputRef.current?.value;
@@ -35,7 +26,7 @@ const Todo = () => {
       });
   }, [inputRef]);
 
-  const add = useMemo(() => {}, []);
+  //   const add = useMemo(() => {}, []);
 
   return (
     <div className="container mx-auto">
@@ -97,8 +88,6 @@ const Todo = () => {
               htmlFor="checkboxDefault"
             >
               {item}
-              {add()}
-              {add}
             </label>
           </div>
         ))}
