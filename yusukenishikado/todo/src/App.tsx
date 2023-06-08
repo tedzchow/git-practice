@@ -33,8 +33,30 @@ function App() {
 
       settitle("");
     }
+
+    else{
+      alert("Input task name")
+    }
   };
 
+  const handleChangeChecked = (todo: Object) => {
+    const index = todos.indexOf(todo);
+
+    todo.isCompleted = !todo.isCompleted;
+
+    todos.splice(index, 1, todo);
+
+    settodos([...todos]);
+  };
+  
+  const handleDelete = (id: number) => {
+    const index = todos.findIndex((todo) => todo.id === id);
+
+    todos.splice(index, 1);
+
+    settodos([...todos]);
+  };
+  
   return (
     <div className="app">
       <div className="container h-full m-auto bg-white">
@@ -69,6 +91,29 @@ function App() {
             </button>
           </div>
         </div>
+        <ul className="mx-20 mt-5">
+          {todos.map((val) => (
+            <li
+              key={val.id}
+              className={"flex justify-between w-full p-3 px-5 mb-5 border-2 hover:bg-gray-200 rounded-2xl " + (val.isCompleted ? "border-purple-400" : "")}>
+              <div className="text-left">
+                <input
+                  className="text-white"
+                  type="checkbox"
+                  checked={val.isCompleted}
+                  onChange={(e) => handleChangeChecked(val)}
+                />
+                <span className={"mx-5 text-xl " + (val.isCompleted ? "line-through" : "")}>{val.title}</span>
+              </div>
+              <button
+                onClick={() => handleDelete(val.id)}
+                className="font-extrabold hover:text-red-500 "
+              >
+                &times;
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
