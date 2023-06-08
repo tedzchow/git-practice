@@ -74,3 +74,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 ## Contributors
 - [John Doe](./john-doe/README.md)
 - [Sebastian Harvey](./jsstar/README.md)
+- [Yusuke Nishikado](./yusukenishikado/README.md)
