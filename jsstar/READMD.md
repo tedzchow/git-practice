@@ -1,2 +1,4 @@
-Hi, I am Sebastian Harvey.
-I am a Code Lover.
+# about me
+
+    Hi, I am Sebastian Harvey.
+    I am a Code Lover.
