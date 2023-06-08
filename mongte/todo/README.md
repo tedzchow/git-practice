@@ -10,7 +10,6 @@ In this application, I’m going to create To-Do app using React JS using Typesc
 - After installing the node you can create a ReactJS app using *npx create-react-app todo-app --template typescript*.
 - Now here, you can use any name for your app. I’m using todo-app.
 - Now we can start coding. Open the app directory in your code editor.
-![Altsee](../../AltSeeasd.jpg)
-<img src="../../AltSeeasd.jpg" alt="Example image">
-
+![Altsee](../../ALTsee.jpg)
+<img src="../../ALTsee.jpg" alt="Example image">
 
