@@ -1,3 +1,3 @@
 # About Me
 
-Hi! I'm [Lucas](./README.md). I love programming very much.
+Hi! I'm [Lucas Marvel](./README.md). I love programming very much.
