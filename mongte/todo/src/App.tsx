@@ -3,49 +3,7 @@ import "./App.css";
 import "./tailwind.css";
 
 function App() {
-  const [todos, settodos] = React.useState<Object[]>([]);
-  const [title, settitle] = React.useState<string>("");
-  const [display, setDisplay] = React.useState<string>("hidden");
-  type Object = {
-    id: number;
-    title: string;
-    isCompleted: boolean;
-  };
-  const add = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (title !== "") {
-      const todo: Object = {
-        id: Date.now(),
-        title: title,
-        isCompleted: false,
-      };
 
-      settodos([todo, ...todos]);
-
-      localStorage.setItem("todo", JSON.stringify(todos));
-
-      settitle("");
-    }
-  };
-  const addnew = (e: React.FormEvent) => {
-    setDisplay("block");
-  };
-  const handleChangeChecked = (todo: Object) => {
-    const index = todos.indexOf(todo);
-
-    todo.isCompleted = !todo.isCompleted;
-
-    todos.splice(index, 1, todo);
-
-    settodos([...todos]);
-  };
-  const handleDelete = (id: number) => {
-    const index = todos.findIndex((todo) => todo.id === id);
-
-    todos.splice(index, 1);
-
-    settodos([...todos]);
-  };
   return (
     <div className="App ">
       <div className="flex justify-around">
@@ -89,7 +47,7 @@ function App() {
               <input
                 type="checkbox"
                 checked={val.isCompleted}
-                onChange={(e) => handleChangeChecked(val)}
+                onChange={() => handleChangeChecked(val)}
               />
               <span className="text-xl mx-5">{val.title}</span>
             </div>
@@ -105,6 +63,6 @@ function App() {
       </ul>
     </div>
   );
-}
+}  
 
 export default App;
