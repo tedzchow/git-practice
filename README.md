@@ -73,3 +73,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 
 ## Contributors
 - [John Doe](./john-doe/README.md)
+- [Lucas Marvel](./lucas/README.md)
