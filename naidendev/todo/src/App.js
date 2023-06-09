@@ -20,6 +20,11 @@ const TodoList = () => {
   const hideInput = () => {
     setShow("d-none");
   };
+  const handleDelete = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
   return (
     <div className="w-75 m-auto mt-5 border p-4">
       <div className="d-flex justify-content-between">
@@ -59,7 +64,7 @@ const TodoList = () => {
               </td>
               <td className="text-end">
                 <button
-                 
+                  onClick={() => handleDelete(index)}
                   className="btn btn-danger"
                 >
                   &times;
