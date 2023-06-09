@@ -1,11 +1,25 @@
 import React, { useState, useRef } from "react";
-
+import 'bootstrap/dist/css/bootstrap.css'; 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [show, setShow] = useState("d-none");
+  const focus = useRef(null);
 
-
+  const addlist = (e) => {
+    e.preventDefault();
+    if (inputValue) {
+      setTodos([...todos, inputValue]);
+      setInputValue("");
+    }
+    focus.current.focus();
+  };
+  const displayinput = () => {
+    setShow("d-block");
+  };
+  const hideInput = () => {
+    setShow("d-none");
+  };
   return (
     <div className="w-75 m-auto mt-5 border p-4">
       <div className="d-flex justify-content-between">
@@ -13,7 +27,7 @@ const TodoList = () => {
           <i>Todolist</i>
         </h1>
         <div>
-          <button className="btn btn-outline-primary" >
+          <button className="btn btn-outline-primary" onClick={displayinput} >
             + Add New
           </button>
         </div>
@@ -22,14 +36,14 @@ const TodoList = () => {
         <input
           type="text"
           value={inputValue}
-         
+          ref={focus}
           onChange={(e) => setInputValue(e.target.value)}
           className="form-control me-5"
         />
-        <button  className="btn btn-outline-danger me-4">
+        <button onClick={hideInput} className="btn btn-outline-danger me-4">
           Cancel
         </button>
-        <button className="btn btn-primary">
+        <button onClick={addlist} className="btn btn-primary">
           Add
         </button>
       </div>
