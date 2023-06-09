@@ -25,3 +25,4 @@ To delete a task from the Todo list, click on the "X" button next to the task yo
 Double click on the item you wish to update and it will become editable. Once you have made your changes, press enter or click away from the input field to save the changes.
 
 ## Contributors
+- AndersenSven
