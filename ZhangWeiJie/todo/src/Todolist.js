@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const TodoList = () => {
   const [show, setShow] = useState("d-none");
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const focus = useRef(null);
 
   const displayinput = () => {
     setShow("d-block");
@@ -17,6 +18,7 @@ const TodoList = () => {
       setTodos([...todos, inputValue]);
       setInputValue("");
     }
+    focus.current.focus();
   };
   const handleDelete = (index) => {
     const newTodos = [...todos];
@@ -40,6 +42,7 @@ const TodoList = () => {
         <input
           type="text"
           value={inputValue}
+          ref={focus}
           onChange={(e) => setInputValue(e.target.value)}
           className="form-control me-5"
         />
