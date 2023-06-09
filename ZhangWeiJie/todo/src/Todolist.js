@@ -18,6 +18,11 @@ const TodoList = () => {
       setInputValue("");
     }
   };
+  const handleDelete = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
 
   return (
     <div className="w-75 m-auto mt-5 border p-4">
@@ -56,7 +61,12 @@ const TodoList = () => {
                 </label>
               </td>
               <td className="text-end">
-                <button className="btn btn-danger">&times;</button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleDelete(index)}
+                >
+                  &times;
+                </button>
               </td>
             </tr>
           ))}
