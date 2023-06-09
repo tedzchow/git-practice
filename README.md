@@ -1,7 +1,11 @@
-ToDo-List
-
+#ToDo-List
 ToDo list is a simple web application to save Your daily tasks in order not to miss anything.
-
+##Technologies used:
+HTML
+CSS
+JavaScript/jQuery 3.1.1
+jQuery UI
+Firebase
 ### Features
 Add new list button
 Add delete and close button
