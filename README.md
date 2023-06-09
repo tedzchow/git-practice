@@ -8,10 +8,13 @@ ToDo list is a simple web application to save Your daily tasks in order not to m
  bootstrap
 
 ### Features
-Add new list button
-Add delete and close button
-Delete list
-Add checkbox
+Add new list button,
+
+Add delete and close button,
+
+Delete list,
+
+Add checkbox,
 
 ### npm start
 
