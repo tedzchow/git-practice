@@ -18,4 +18,4 @@ My email address is [yusukenishikado96@gmail.com]
 
 ## Applications
 
-- [todo](./todo/README.md)
+- [todo](./todo)
