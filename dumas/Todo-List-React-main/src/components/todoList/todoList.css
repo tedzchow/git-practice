@@ -1,0 +1,35 @@
+.todoList{
+    width: 90%;
+}
+
+.todoList_item{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    background-color: #9FB4C7;
+    box-shadow: inset 2px 2px 5px #fffefeaf,
+                inset -2px -2px 5px rgba(0, 0, 0, 0.964);
+}       
+
+.todoList_item_btn{
+    display: flex;
+    gap: 15px;
+}
+
+.done{
+    text-decoration: line-through;
+    background-color: #9fb4c75b;
+}
+
+@media screen and (max-width: 515px) {
+    .todoList_item{
+        padding: 10px;
+    }       
+    .todoList_item_btn{
+        gap: 5px;
+    }
+}
