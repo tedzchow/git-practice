@@ -1,219 +1,115 @@
-import { React, useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import Inputgroup from '../common/Inputgroup'
-import { useNavigate } from 'react-router-dom'
+import { React, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import Inputgroup from "../common/Inputgroup";
+import { useNavigate } from "react-router-dom";
 import {
   add_exp,
   read_exp,
   update_exp,
-  del_exp
-} from '../redux/action/expActions'
-import Selectbar from '../common/Selectbar'
+  del_exp,
+} from "../redux/action/expActions";
+import Selectbar from "../common/Selectbar";
+import Table from "./Table.component";
+import Modal from "./Modal.component";
 
 const Expense = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [date, setdate] = useState(new Date())
-  const [amount, setamount] = useState('')
-  const [description, setdescription] = useState('')
-  const [deleteid, setdeleteid] = useState(0)
-  const [editid, seteditid] = useState(0)
-  const [dateedit, setdateedit] = useState(new Date())
-  const [amountedit, setamountedit] = useState('')
-  const [descriptionedit, setdescriptionedit] = useState('')
-  const user = useSelector(state => state.auth.user)
-  const exps = useSelector(state => state.exp.exp)
-  const isauth = useSelector(state => state.auth.isauth)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [date, setDate] = useState(new Date());
+  const [amount, setAmount] = useState("");
+  const [description, setDescription] = useState("");
+  const [deleteid, setDeleteid] = useState(0);
+  const [editid, setEditid] = useState(0);
+  const [dateedit, setDateedit] = useState(new Date());
+  const [amountedit, setAmountedit] = useState("");
+  const [descriptionedit, setDescriptionedit] = useState("");
+  const user = useSelector((state) => state.auth.user);
+  const exps = useSelector((state) => state.exp.exp);
+  const isauth = useSelector((state) => state.auth.isauth);
   useEffect(() => {
-    dispatch(read_exp(user.id))
+    dispatch(read_exp(user.id));
     if (!isauth) {
-      navigate('/')
+      navigate("/");
     }
-  }, [])
+    //eslint-disable-next-line
+  }, []);
   const add = () => {
     const newexp = {
       date: date,
       amount: amount,
       description: description,
-      id: user.id
-    }
-    setdate('')
-    setdescription('')
-    setamount('')
-    dispatch(add_exp(newexp))
-  }
-  const edit = item => {
-    seteditid(item._id)
-    setdescriptionedit(item.description)
-    setamountedit(item.amount)
-    setdateedit(item.date)
-  }
+      id: user.id,
+    };
+    setDate("");
+    setDescription("");
+    setAmount("");
+    dispatch(add_exp(newexp));
+  };
+  const edit = (item) => {
+    setEditid(item._id);
+    setDescriptionedit(item.description);
+    setAmountedit(item.amount);
+    setDateedit(item.date);
+  };
   const update = () => {
     const updateexp = {
       date: dateedit,
       amount: amountedit,
       description: descriptionedit,
       id: user.id,
-      _id: editid
-    }
-    dispatch(update_exp(updateexp, editid))
-    dispatch(read_exp(user.id))
-    seteditid(0)
-  }
+      _id: editid,
+    };
+    dispatch(update_exp(updateexp, editid));
+    dispatch(read_exp(user.id));
+    setEditid(0);
+  };
   const del = () => {
-    dispatch(del_exp(deleteid))
-    dispatch(read_exp(user.id))
-    setdeleteid(0)
-  }
+    dispatch(del_exp(deleteid));
+    dispatch(read_exp(user.id));
+    setDeleteid(0);
+  };
   return (
     <>
-      <div className='container d-flex justify-content-between mt-4'>
+      <div className="container d-flex justify-content-between mt-4">
         <Inputgroup
-          type='date'
-          label='Date:'
+          type="date"
+          label="Date:"
           value={date}
-          onChange={e => setdate(e.target.value)}
+          onChange={(e) => setDate(e.target.value)}
         ></Inputgroup>
         <Inputgroup
-          type='Number'
-          label='Amount:'
+          type="Number"
+          label="Amount:"
           value={amount}
-          onChange={e => setamount(e.target.value)}
+          onChange={(e) => setAmount(e.target.value)}
         ></Inputgroup>
         <Selectbar
-          label='Description'
+          label="Description"
           value={description}
-          onChange={e => setdescription(e.target.value)}
+          onChange={(e) => setDescription(e.target.value)}
         ></Selectbar>
         <button
-          type='button'
-          className='btn btn-primary btn-sm add mt-4'
+          type="button"
+          className="btn btn-primary btn-sm add mt-4"
           onClick={() => add()}
         >
           Add
         </button>
       </div>
-      <table className='text-center bg-primary p-3 table table-striped mt-5'>
-        <thead className='text-center'>
-          <tr>
-            <td>Date</td>
-            <td>Amount</td>
-            <td>Description</td>
-            <td>Edit</td>
-            <td>Delete</td>
-          </tr>
-        </thead>
-        <tbody>
-          {exps.map((item, key) => {
-            return (
-              <tr key={item._id} className={item._id && 'bg-success'}>
-                <td>
-                  {item._id === editid ? (
-                    <input
-                      type='date'
-                      defaultValue={item.date.slice(0, 10)}
-                      onChange={e => {
-                        setdateedit(e.target.value)
-                      }}
-                    ></input>
-                  ) : (
-                    item.date.slice(0, 10)
-                  )}
-                </td>
-                <td>
-                  {item._id === editid ? (
-                    <input
-                      type='number'
-                      defaultValue={item.amount}
-                      onChange={e => {
-                        setamountedit(e.target.value)
-                      }}
-                    ></input>
-                  ) : (
-                    item.amount
-                  )}
-                </td>
-                <td>
-                  {item._id === editid ? (
-                    <Selectbar
-                      value={description}
-                      onChange={e => setdescription(e.target.value)}
-                    ></Selectbar>
-                  ) : (
-                    item.description
-                  )}
-                </td>
-                <td>
-                  {item._id === editid ? (
-                    <div className='btn btn-info' onClick={() => update()}>
-                      Update
-                    </div>
-                  ) : (
-                    <div className='btn btn-info' onClick={() => edit(item)}>
-                      Edit
-                    </div>
-                  )}
-                </td>
-                <td>
-                  {' '}
-                  <button
-                    type='button'
-                    className='btn btn-primary'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                    onClick={() => setdeleteid(item._id)}
-                  >
-                    {' '}
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-      <div
-        className='modal fade'
-        id='exampleModal'
-        tabIndex='-1'
-        aria-labelledby='exampleModalLabel'
-        aria-hidden='true'
-      >
-        <div className='modal-dialog'>
-          <div className='modal-content'>
-            <div className='modal-header'>
-              <h1 className='modal-title fs-5' id='exampleModalLabel'>
-                Modal title
-              </h1>
-              <button
-                type='button'
-                className='btn-close'
-                data-bs-dismiss='modal'
-                aria-label='Close'
-              ></button>
-            </div>
-            <div className='modal-footer'>
-              <button
-                type='button'
-                className='btn btn-secondary'
-                data-bs-dismiss='modal'
-              >
-                Close
-              </button>
-              <button
-                type='button'
-                className='btn btn-primary'
-                data-bs-dismiss='modal'
-                onClick={() => del()}
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Table
+        exps={exps}
+        editid={editid}
+        setDateedit={setDateedit}
+        setAmountedit={setAmountedit}
+        description={description}
+        setDescription={setDescription}
+        update={update}
+        edit={edit}
+        setDeleteid={setDeleteid}
+      />
+      <Modal del={del} />
     </>
-  )
-}
-export default Expense
+  );
+};
+export default Expense;
