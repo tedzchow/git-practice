@@ -1,19 +1,4 @@
-# Todo List App
+# Introduce myself
 
-A simple todo list application built using React and Bootstrap.
-
-## Technologies Used
-
-- React 17.0.2
-- Bootstrap 5.0.1
-- Node.js 14.15.4
-
-## Features
-
-- Add tasks to the list
-- Mark tasks as completed
-- Delete tasks from the list
-
-## Getting Started
-
-To get started with this project, clone the repository and install the dependencies:
+Hi! This is Carisno Remes from Filand and 27 years old. Love programming very much as a fullstack development. Familiar with REACT.JS and VUE.JS for frontend development,PHP and NODE.JS for backend development. If you want to know more about me, send me message to my email address. Here is my email address. [carisnoremes@gmail.com]
+Thanks.

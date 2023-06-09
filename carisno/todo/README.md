@@ -2,17 +2,24 @@
 
 A simple todo list application built using React and Bootstrap.
 
+# How to use
+
+- Clone this repository
+- Install dependencies using npm install command
+- Start the server using npm start command
+- Start the client using cd client && npm start command
+- Visit http://localhost:3000 in your browser to view the app
+
+# Features
+
+- Add task
+- Delete task
+- Mark tasks as completed
+
 ## Technologies Used
 
-- React 17.0.2
+- React 18.0.2
 - Bootstrap 5.0.1
-- Node.js 14.15.4
-
-## Features
-
-- Add tasks to the list
-- Mark tasks as completed
-- Delete tasks from the list
 
 ## Getting Started
 
