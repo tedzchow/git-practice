@@ -91,3 +91,5 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [White Collin](./whitecollin/)
 - [Donald Ross](./donald-ross/)
 - [Lucas Marvel](./lucas/README.md)
+- [Yusuke Nishikado](./yusukenishikado/README.md)
+
