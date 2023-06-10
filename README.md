@@ -89,6 +89,6 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [John Doe](./john-doe/README.md)
 - [Sebastian Harvey](./jsstar/README.md)
 - [White Collin](./whitecollin/)
-- [Yusuke Nishikado](./yusukenishikado/README.md)
 - [Donald Ross](./donald-ross/)
 - [Lucas Marvel](./lucas/README.md)
+- [Yusuke Nishikado](./yusukenishikado/README.md)
