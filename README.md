@@ -98,3 +98,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [WeiJie Zhang](./weijie-zhang/README.md)
 - [Alice Ibrahimovic](./alice/README.md)
 - [Lysander Stewart](./lysander/README.md)
+- [Aron Li](./aron-li/README.md)
