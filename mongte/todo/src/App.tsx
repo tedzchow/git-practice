@@ -4,6 +4,8 @@ import "./App.css";
 
 function App() {
   const [display, setDisplay] = React.useState<string>("hidden");
+  const [title, settitle] = React.useState<string>("");
+
   const addnew = (e: React.FormEvent) => {
     setDisplay("block");
   };
@@ -19,6 +21,17 @@ function App() {
             +&nbsp;Add&nbsp;New
           </button>
         </header>
+      </div>
+      <div id="demo" className={"pt-20 text-lg flex justify-center " + display}>
+        <input
+          type="text"
+          placeholder="Write Task Name"
+          className="px-10 py-2  mx-10 text-sky-500 hover:rounded-lg focus:bg-pink-200 focus:outline-none"
+          value={title}
+          onChange={(e) => {
+            settitle(e.target.value);
+          }}
+        />
       </div>
     </div>
   );
