@@ -89,4 +89,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [John Doe](./john-doe/README.md)
 - [Sebastian Harvey](./jsstar/README.md)
 - [White Collin](./whitecollin/)
-- [ZhangWeiJie](./ZhangWeiJie/README.md)
+- [WeiJie Zhang](./WeiJie%20Zhang/README.md)
