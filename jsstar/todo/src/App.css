@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+}
+
+.todo-item.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+  border-color: purple;
+  border-width: 2px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button.delete {
+  color: purple;
+  margin-left: 1rem;
+}
+
+.btn {
+  background-color: white;
+  padding: 6px;
+  color: purple;
+  margin: 5px;
+  border-color: purple;
+  border-radius: 5px;
+  border-width: 2px;
+  width: 200px;
+  height: 40px;
+  font-size: 25px;
+}
+.btn:hover {
+  background-color: purple;
+  color: white;
+}
+.add-btn{
+  background-color: purple;
+  color: white;
+  border-radius: 5px;
+  border-width: 2px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+}
+.cancel-btn {
+  background-color: gray;
+  color: black;
+  border-radius: 5px;
+  border-width: 2px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.add-input {
+  padding: 10px;
+  width: 450px;
+  margin-right: 130px;
+}
+ul {
+  padding: 0;
+}
+input {
+  padding: 20px;
+}
+input[type="checkbox"]:focus {
+  border-color: red;
+}
+.add {
+  display: none;
+}
+.flex {
+  display: flex;
+}
+.between {
+  justify-content: space-between;
+  align-items: center;
+}

@@ -83,7 +83,20 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 ### Congrats
 
 20. The admin will review the PR and say **Congrats** if everything looks good.
+
 ## Contributors
 
-- [Jone-Doe](./john-doe/README.md)
+- [John Doe](./john-doe/README.md)
+- [Sebastian Harvey](./jsstar/README.md)
+- [White Collin](./whitecollin/)
+- [Donald Ross](./donald-ross/)
+- [Lucas Marvel](./lucas/README.md)
+- [Yusuke Nishikado](./yusukenishikado/README.md)
+- [Carisno Remes](./carisno/)
+- [Andreas Fischer](./andreas-fischer/README.md)
+- [Nguyen Aiden](./naidendev/README.md)
+- [WeiJie Zhang](./weijie-zhang/README.md)
+- [Alice Ibrahimovic](./alice/README.md)
+- [Lysander Stewart](./lysander/README.md)
 - [JinCheng](./jincheng/README.md)
+
