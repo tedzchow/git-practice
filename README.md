@@ -85,5 +85,10 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 20. The admin will review the PR and say **Congrats** if everything looks good.
 
 ## Contributors
-
+- [John Doe](./john-doe/README.md)
+- [Sebastian Harvey](./jsstar/README.md)
+- [White Collin](./whitecollin/)
+- [Donald Ross](./donald-ross/)
+- [Lucas Marvel](./lucas/README.md)
+- [Andreas Fischer](./andreas-fischer/README.md)
 
