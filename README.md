@@ -90,3 +90,7 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [Sebastian Harvey](./jsstar/README.md)
 - [White Collin](./whitecollin/)
 - [Carisno Remes](./carisno/)
+- [Donald Ross](./donald-ross/)
+- [Lucas Marvel](./lucas/README.md)
+- [Yusuke Nishikado](./yusukenishikado/README.md)
+
