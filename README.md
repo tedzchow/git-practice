@@ -95,7 +95,6 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [Carisno Remes](./carisno/)
 - [Andreas Fischer](./andreas-fischer/README.md)
 - [Nguyen Aiden](./naidendev/README.md)
-- [Lysander Stewart](./lysander/README.md)
 - [WeiJie Zhang](./weijie-zhang/README.md)
 - [Alice Ibrahimovic](./alice/README.md)
 - [Lysander Stewart](./lysander/README.md)
