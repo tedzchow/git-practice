@@ -4,9 +4,13 @@ import "./App.css";
 
 function App() {
   const [todos, settodos] = React.useState<Object[]>([]);
-
   const [display, setDisplay] = React.useState<string>("hidden");
   const [title, settitle] = React.useState<string>("");
+  type Object = {
+    id: number;
+    title: string;
+    isCompleted: boolean;
+  };
   const add = (e: React.FormEvent) => {
     e.preventDefault();
     if (title !== "") {
@@ -22,6 +26,17 @@ function App() {
   };
   const addnew = (e: React.FormEvent) => {
     setDisplay("block");
+  };
+  const handleChangeChecked = (todo: Object) => {
+    const index = todos.indexOf(todo);
+    todo.isCompleted = !todo.isCompleted;
+    todos.splice(index, 1, todo);
+    settodos([...todos]);
+  };
+  const handleDelete = (id: number) => {
+    const index = todos.findIndex((todo) => todo.id === id);
+    todos.splice(index, 1);
+    settodos([...todos]);
   };
   return (
     <div className="App">
@@ -56,6 +71,30 @@ function App() {
           Cancel
         </button>
       </div>
+      <ul className="inline-block w-[60%] ml-[8%] justify-center mx-10 pt-10">
+        {todos.map((val) => (
+          <li
+            key={val.id}
+            className="text-black hover:outline rounded-xl px-5 hover:outline-1 p-3 w-full m-5 flex justify-between"
+          >
+            <div className="text-left">
+              <input
+                type="checkbox"
+                checked={val.isCompleted}
+                onChange={() => handleChangeChecked(val)}
+              />
+              <span className="text-xl mx-5">{val.title}</span>
+            </div>
+
+            <button
+              onClick={() => handleDelete(val.id)}
+              className="text-right rounded-xl mx-5"
+            >
+              &times;
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
