@@ -3,9 +3,23 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const [todos, settodos] = React.useState<Object[]>([]);
+
   const [display, setDisplay] = React.useState<string>("hidden");
   const [title, settitle] = React.useState<string>("");
-
+  const add = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (title !== "") {
+      const todo: Object = {
+        id: Date.now(),
+        title: title,
+        isCompleted: false,
+      };
+      settodos([todo, ...todos]);
+      localStorage.setItem("todo", JSON.stringify(todos));
+      settitle("");
+    }
+  };
   const addnew = (e: React.FormEvent) => {
     setDisplay("block");
   };
@@ -32,6 +46,15 @@ function App() {
             settitle(e.target.value);
           }}
         />
+        <button className="bg-pink-100 px-7  rounded-xl mx-5 " onClick={add}>
+          Add
+        </button>
+        <button
+          className="bg-sky-300 px-5 rounded-xl"
+          onClick={(e) => setDisplay("hidden")}
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );
