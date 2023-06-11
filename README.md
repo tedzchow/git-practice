@@ -86,9 +86,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 
 ## Contributors
 
-- [John Doe](./john-doe/README.md)
-- [Donald Fischer](./donald-fischer/README.md)
-- [Sebastian Harvey](./jsstar/README.md)
-- [White Collin](./whitecollin/)
-- [Donald Ross](./donald-ross/)
-- [Lucas Marvel](./lucas/README.md)
+
