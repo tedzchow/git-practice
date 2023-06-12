@@ -85,7 +85,6 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 20. The admin will review the PR and say **Congrats** if everything looks good.
 
 ## Contributors
-- [Nathan Adams](./Nathan-Adams/README.md)
 - [John Doe](./john-doe/README.md)
 - [Sebastian Harvey](./jsstar/README.md)
 - [White Collin](./whitecollin/)
@@ -97,3 +96,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [Nguyen Aiden](./naidendev/README.md)
 - [WeiJie Zhang](./weijie-zhang/README.md)
 - [Alice Ibrahimovic](./alice/README.md)
+- [Nathan Adams](./Nathan-Adams/README.md)
