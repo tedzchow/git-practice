@@ -1,10 +1,10 @@
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 
 import { ADD_TODO, DELETE_TODO } from '../config/constants';
 
-import { ITodos, todo } from '../config/type';
+import { ITodos } from '../config/type';
 
 const Todo = () => {
   const dispatch = useAppDispatch();
@@ -18,7 +18,7 @@ const Todo = () => {
         type: ADD_TODO,
         payload: todo,
       });
-  }, [inputRef]);
+  }, [inputRef, dispatch]);
 
   const ondelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const id = e.currentTarget.value;
