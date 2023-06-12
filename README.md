@@ -100,4 +100,3 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [Lysander Stewart](./lysander/README.md)
 - [JinCheng](./jincheng/README.md)
 - [Andersen Sven](./andersen-sven/README.md)
-
