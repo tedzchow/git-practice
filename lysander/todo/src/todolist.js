@@ -49,14 +49,14 @@ const TodoList = () => {
           onChange={(e) => setInputValue(e.target.value)}
           className="form-control me-5"
         />
-        <button onClick={hideInput} className="btn btn-danger me-4">
+        <button onClick={hideInput} className="btn btn-danger me-5">
           Cancel
         </button>
         <button onClick={addlist} className="btn btn-primary">
           Add
         </button>
       </div>
-      <table className="table  border border-warning mt-3 m-auto">
+      <table className="table  border border-primary mt-3 m-auto">
         <tbody>
           {todos.map((todo, index) => (
             <tr key={index} className="my-3">
