@@ -1,10 +1,16 @@
 # About this App
 
-This project is created with React.
+This project is created with ReactJS and Tailwind.
 
 ## How to run this App
 
 ### `npm start`
+
+    to run this project
+
+        cd todo
+
+        npm start
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
