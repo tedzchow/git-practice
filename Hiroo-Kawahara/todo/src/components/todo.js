@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
+    const [selectedIds, setSelectedIds] = useState([]);
 
     function handleAddTodo(event) {
         event.preventDefault();
@@ -11,6 +12,19 @@ function TodoList() {
         setTodos(prevTodos => [...prevTodos, newTodo]);
         console.log(todos);
         event.target.reset();
+    }
+
+    function handleDeleteSelected() {
+        setTodos(prevTodos => prevTodos.filter(todo => !selectedIds.includes(todo.id)));
+        setSelectedIds([]);
+    }
+
+    function handleSelect(id) {
+        if (selectedIds.includes(id)) {
+            setSelectedIds(selectedIds.filter(todoId => todoId !== id));
+        } else {
+            setSelectedIds([...selectedIds, id]);
+        }
     }
     function show(e) {
         document.getElementById("form").style.display = "block"
@@ -44,6 +58,9 @@ function TodoList() {
                             no={todo.id}
                             text={todo.text}
                             completed={todo.completed}
+                            deleteTodo={handleDeleteSelected}
+                            isSelected={selectedIds.includes(todo.id)}
+                            selectTodo={() => handleSelect(todo.id)}
                         />
                     ))}
                 </ul>
@@ -56,7 +73,12 @@ function TodoItem({ text, deleteTodo, isSelected, selectTodo, no}) {
     return (
         <li className={`border-solid border-2 p-3 rounded-2xl   flex justify-between my-3 ${isSelected ? "border-purple-600" : " "
             }`}>
+            <div>
+                <input type="checkbox" checked={isSelected} onChange={selectTodo} className='mr-2' />
+                <span style={{ textDecoration: isSelected ? 'line-through' : 'none' }} >{text}</span>
+            </div>
             <p>{no}</p>
+            <button onClick={deleteTodo} className=''>X</button>
         </li>
     );
 }
