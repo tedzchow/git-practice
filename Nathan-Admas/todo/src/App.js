@@ -4,7 +4,36 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
 
 const TodoList = () => {
-  
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState('');
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleAddTodo = () => {
+    if (newTodo.trim()) {
+      setTodos([...todos, newTodo.trim()]);
+      setNewTodo('');
+      setIsChecked(false);
+    }
+  };
+
+  const handleEditTodo = (index) => {
+    const editedTodo = prompt('Edit your todo:', todos[index]);
+    if (editedTodo !== null && editedTodo.trim()) {
+      const updatedTodos = [...todos];
+      updatedTodos[index] = editedTodo.trim();
+      setTodos(updatedTodos);
+    }
+  };
+  const handleDeleteTodo = (index) => {
+    if(isChecked){
+      const updatedTodos = todos.filter((todo, i) => i !== index);
+      setTodos(updatedTodos);
+    }
+  };
+
+  const handlecheck = () =>{
+    setIsChecked(!isChecked);
+  }
 
   return (
     <div className='container'>
