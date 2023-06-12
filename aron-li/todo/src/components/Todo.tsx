@@ -20,6 +20,13 @@ const Todo = () => {
       });
   }, [inputRef]);
 
+  const ondelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const id = e.currentTarget.value;
+    dispatch({
+      type: DELETE_TODO,
+      payload: id,
+    });
+  };
   return (
     <div className='container mx-auto'>
       <div className='flex justify-between bg-black text-white px-10 py-5'>
@@ -85,6 +92,16 @@ const Todo = () => {
               >
                 {item}
               </label>
+            </div>
+            <div>
+              <button
+                type='button'
+                className='inline-block rounded border-0 border-success px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-success transition duration-150 ease-in-out hover:border-success-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-success-600 focus:border-success-600 focus:text-success-600 focus:outline-none focus:ring-0 active:border-success-700 active:text-success-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10'
+                data-te-ripple-init
+                onClick={(e) => ondelete(e)}
+              >
+                X
+              </button>
             </div>
           </li>
         ))}

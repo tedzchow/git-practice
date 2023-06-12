@@ -11,6 +11,11 @@ export default function (state = initialState, action: Actiontype) {
         todoList: [...state.todoList, action.payload],
       };
 
+    case DELETE_TODO:
+      state.todoList.splice(Number(action.payload), 1);
+      return {
+        ...state,
+      };
     default:
       return state;
   }
