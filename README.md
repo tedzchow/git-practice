@@ -97,4 +97,4 @@ This repository is designed to help newbies practice using Git and GitHub by cre
 - [Nguyen Aiden](./naidendev/README.md)
 - [WeiJie Zhang](./weijie-zhang/README.md)
 - [Alice Ibrahimovic](./alice/README.md)
-- [Hiroo Kawahara](./Hiroo-Kawahara/README.md)
+- [Hiroo Kawahara](./hiroo-kawahara/README.md)
